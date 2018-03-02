@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical|center_horizontal|center"
+    android:baselineAligned="false" >
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.MapFragment" > 
+    </fragment>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@id/map"
+        android:orientation="vertical"
+        android:padding="6dp" >
+
+        <CheckBox
+            android:id="@+id/satellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D000"
+            android:padding="6dp"            
+            android:onClick="changeMapView"
+            android:text="Спутник">
+        </CheckBox> 
+
+
+        <TableLayout
+            android:id="@+id/routeOnMapInfoLayout"
+            android:layout_marginTop="10dp"
+			android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#D000" >
+            
+        </TableLayout>
+        
+        
+        
+	</LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/mainBriefTTLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+		android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+        
+        
+    	<ScrollView
+    	    android:id="@+id/TTscrollView"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:fillViewport="true"
+    	    android:scrollbars="vertical" >    	        	    
+
+    		<LinearLayout 
+    		    	style="@style/TTLayout">
+        
+       				<LinearLayout
+       				    android:orientation="horizontal"
+            			android:layout_width="match_parent"
+            			android:layout_height="wrap_content" >
+      
+       				    <TextView
+       				        android:layout_weight=".87"
+            				android:id="@+id/stopTitleTextView"
+            				style="@style/TitleTextView" >
+      					</TextView>
+      					
+       					<ImageView
+       					    android:layout_weight=".13"
+                			android:onClick="closeBriefTimetable"
+                			android:src="@drawable/close"
+                			style="@style/Icon" > 
+                		</ImageView>
+                		
+      				</LinearLayout>
+      				           				
+            	    <TextView
+       				 	android:id="@+id/routesOverviewTextView"
+       				    style="@style/RoutesOverviewTextView"
+       				/>
+            		       				    
+       				
+     			<LinearLayout
+        			android:id="@+id/briefTTLayout"
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:orientation="vertical" > 
+        		</LinearLayout>
+    
+    		</LinearLayout>
+         
+   		</ScrollView>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/mainFullTTLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:visibility="invisible" >
+        
+    	<ScrollView
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="wrap_content"
+    	    android:fillViewport="true"
+    	    android:scrollbars="vertical" >
+    	    
+    		<LinearLayout style="@style/TTLayout">
+    		    
+				<LinearLayout
+            		android:layout_width="match_parent"
+            		android:orientation="horizontal"
+            		android:layout_height="wrap_content" >
+       					
+				    <ImageView 
+				        android:layout_weight=".13"
+				        android:onClick="backToBriefTimetable"
+				        style="@style/Icon"
+				        android:src="@drawable/back"
+				        />
+        
+            		<TextView
+            			android:id="@+id/stopTitleFullTextView"
+            			android:layout_weight=".74"
+            			style="@style/TitleTextView" >
+            		</TextView> 
+            			
+            		<ImageView
+                		android:onClick="closeFullTimetable"
+                		android:layout_weight=".13"
+                		android:src="@drawable/close"
+                		style="@style/Icon" > 
+                	</ImageView> 
+  
+        		</LinearLayout>
+        
+				<LinearLayout
+            		android:layout_width="match_parent"
+            		android:orientation="horizontal"
+            		android:layout_height="wrap_content" >
+            		
+				    <ImageView 
+				        android:layout_width="0dp"
+				        android:layout_weight=".13"				        
+				        android:layout_height="wrap_content"
+				        android:adjustViewBounds="true"
+				        android:scaleType="fitCenter"
+				        android:src="@drawable/route_icon"
+				        android:onClick="showRouteOnMap"
+				    />"
+				    
+					<TextView
+            			android:id="@+id/routeTitleTextView"
+            			android:layout_width="0dp"
+            			android:layout_weight=".87"
+            			android:layout_height="wrap_content"
+            			android:textSize="23sp"
+            			android:textStyle="bold" >
+            		</TextView> 
+            		
+				</LinearLayout>
+				
+     			<TextView
+            		android:id="@+id/fullTTLayout"
+            		android:layout_gravity="center_horizontal"
+            		android:textSize="15sp"
+            		android:layout_width="wrap_content"
+            		android:layout_height="wrap_content"
+            		android:text="" > 
+            	</TextView>
+                       
+    		</LinearLayout>
+    	        	    	        	    
+   		</ScrollView>
+    		
+    </LinearLayout>
+        		
+    <LinearLayout
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/hints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#D000"
+            android:textStyle="italic"
+            android:text="Загрузка..." >            
+        </TextView> 
+        
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+        
+		<ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:onClick="showMenu"
+            android:src="@drawable/menu" >
+    	</ImageView>    	
+                
+    </LinearLayout>
+    
+</RelativeLayout>

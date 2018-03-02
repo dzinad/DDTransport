@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Транспорт Минска</string>
+    <string name="map_name">Карта с остановками</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="stopsFileName">stops.txt</string>
+    <string name="routesFileName">routes.txt</string>
+    <string name="timesFileName">times.txt</string>
+    <string name="directory">com.dd.transport</string>
+    <string name="stopsURL">http://www.minsktrans.by/city/minsk/stops.txt</string>
+    <string name="routesURL">http://www.minsktrans.by/city/minsk/routes.txt</string>
+    <string name="timesURL">http://www.minsktrans.by/city/minsk/times.txt</string>
+    <string name="unknownError">Неизвестная ошибка. Попробуйте перезапустить приложение.</string>
+    <string name="fileNotFoundError">Ошибка: файл не найден.</string>
+    <string name="loading">Загрузка...</string>
+    <string name="menu_name">Меню</string>
+    <string name="color_bus">#FDA385</string>
+    <string name="color_trol">#2ECCFA</string>
+    <string name="color_tram">#BDFD8C</string>
+    <string name="color_metro">#FDA385</string>
+    
+</resources>
